@@ -1,0 +1,24 @@
+{
+  "color": [
+    {
+      "name": "start_window_background",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "status_background",
+      "value": "#E0E0E0"
+    },
+    {
+      "name": "devices_background",
+      "value": "#F5F5F5"
+    },
+    {
+      "name": "button_blue",
+      "value": "#007AFF"
+    },
+    {
+      "name": "button_green",
+      "value": "#34C759"
+    }
+  ]
+}

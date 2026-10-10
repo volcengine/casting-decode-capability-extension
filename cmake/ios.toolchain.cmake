@@ -1,0 +1,40 @@
+# pupnp iOS CMake 工具链配置
+# 基于标准的 iOS CMake 工具链
+
+set(CMAKE_SYSTEM_NAME iOS)
+
+if(NOT DEFINED CMAKE_OSX_ARCHITECTURES)
+    set(CMAKE_OSX_ARCHITECTURES "arm64" CACHE STRING "")
+endif()
+
+if(NOT DEFINED CMAKE_OSX_DEPLOYMENT_TARGET)
+    set(CMAKE_OSX_DEPLOYMENT_TARGET "12.0" CACHE STRING "")
+endif()
+
+# 设置 SDK 和平台检测
+if(NOT DEFINED CMAKE_OSX_SYSROOT)
+    execute_process(
+        COMMAND xcrun --sdk iphoneos --show-sdk-path
+        OUTPUT_VARIABLE CMAKE_OSX_SYSROOT
+        OUTPUT_STRIP_TRAILING_WHITESPACE
+    )
+endif()
+
+set(CMAKE_C_COMPILER clang)
+set(CMAKE_CXX_COMPILER clang++)
+
+# iOS 特定的编译标志
+set(CMAKE_C_FLAGS_INIT "-fembed-bitcode")
+set(CMAKE_CXX_FLAGS_INIT "-fembed-bitcode")
+
+# 查找路径配置
+set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
+set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
+
+# 设置属性
+set(CMAKE_XCODE_ATTRIBUTE_ONLY_ACTIVE_ARCH NO)
+
+# 不使用 Objective-C 的编译
+enable_language(C CXX)

@@ -1,0 +1,36 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "UPnP Demo"
+    },
+    {
+      "name": "text_status",
+      "value": "Status"
+    },
+    {
+      "name": "button_search_devices",
+      "value": "Search Devices"
+    },
+    {
+      "name": "button_create_device",
+      "value": "Create Device"
+    },
+    {
+      "name": "text_discovered_devices",
+      "value": "Discovered Devices"
+    },
+    {
+      "name": "internet_permission_reason",
+      "value": "Need internet permission for UPnP communication"
+    }
+  ]
+}
